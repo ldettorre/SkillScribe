@@ -28,7 +28,7 @@ SECRET_KEY = config('SECRET_KEY')
 DEBUG = config('DEBUG', cast=bool)
 
 
-ALLOWED_HOSTS = ['skillscribe-d47e2a842c2b.herokuapp.com',]
+ALLOWED_HOSTS = ['skillscribe-d47e2a842c2b.herokuapp.com','127.0.0.1']
 
 
 # Application definition
@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'home',
+    'entries',
 ]
 
 MIDDLEWARE = [
