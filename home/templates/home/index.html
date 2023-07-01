@@ -1,3 +1,6 @@
 {% extends 'base.html' %} {% block content %}
-    <h1>Hello, from the home/index template folder.</h1>
+    <h1>Landing Page.</h1>
+    <a href="{% url 'login' %}">Login</a>
+    <a href="{% url 'register' %}">Register</a>
+    <a href="{% url 'questions' %}">Questions</a>
 {% endblock %}

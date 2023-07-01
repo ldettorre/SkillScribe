@@ -1,11 +1,12 @@
 {% extends 'base.html' %} {% block content %}
-    <h1>Hello, from the entries template folder.</h1>
+    <h1>Questions Page.</h1>
     {% for category in categories %}
-    <p>{{ category.type }}</p>
+    <p>Category: {{ category.type }}</p>
     {% endfor %}
 
     {% for question in questions %}
-    <p>{{ question.title }}</p>
-    <p>{{ question.helpful_tip }}</p>
+    <p>Question: {{ question.title }}</p>
+    
+    <p>Top Tip: {{ question.helpful_tip }}</p>
     {% endfor %}
 {% endblock %}
