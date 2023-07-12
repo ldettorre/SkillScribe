@@ -1,10 +1,12 @@
 {% extends 'base.html' %} {% block content %}
     <h1>Questions Page.</h1>
     {% for category in categories %}
-        <b>{{ category.type }}</b>
+        <b>{{ category.name }}</b>
         {% for question in category.behaviouralquestion_set.all %}
             <p>{{ question.title }}</p>
-            <a href="{% url 'question' question.id %}">Add Entry</a>
+            <a href="{% url 'add_entry' question.id %}">Add Entry</a>
         {% endfor %}
+        <br>
     {% endfor %}
+
 {% endblock %}

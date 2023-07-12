@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login as auth_login, logout as auth_logout
+from entries.views import questions
 # login and logout are given aliases as they conflict with the view names
 
 def login(request):
@@ -11,7 +12,7 @@ def login(request):
         if user is not None:
             auth_login(request, user)
             print("User logged in.")
-            return redirect('profile')
+            return redirect('questions')
         else:
             print("User not logged in.")
             return redirect('login')
@@ -21,7 +22,7 @@ def login(request):
 def logout(request): 
     auth_logout(request)
     print('User logged out')
-    return redirect('login')
+    return redirect('questions')
 
 
 def register(request):
