@@ -25,3 +25,4 @@ class Entry(models.Model):
     task = models.TextField()
     action = models.CharField(max_length=300)
     result = models.CharField(max_length=300)
+    

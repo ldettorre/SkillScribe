@@ -2,6 +2,7 @@ from datetime import timezone
 from django.shortcuts import render, redirect, get_object_or_404
 from .models import Category, BehaviouralQuestion, Entry
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth.models import User
 from .forms import EntryForm
 
 # Create your views here.
@@ -34,3 +35,30 @@ def add_entry(request, question_id):
             'question' : question,
         }
         return render(request, 'entries/add_entry.html',context)
+
+@login_required(login_url="/login/")
+def get_entries(request):
+    # Filter the entries retrieved that only match the logged in user.
+    entries = Entry.objects.filter(owner = request.user)
+    context = {
+        'entries' : entries,
+    }
+    return render(request, 'entries/my_entries.html',context)
+
+@login_required(login_url="/login/")
+def edit_entry(request, entry_id):
+    # Get required entry by id.
+    entry = get_object_or_404(Entry, id=entry_id)
+    question = entry.question
+    form = EntryForm()
+    if request.method == 'POST':
+        form = EntryForm(request.POST, instance=entry)
+        if form.is_valid():
+            entry = form.save(commit=False)
+            entry.save()
+            return redirect('get_entries')
+
+    else:
+        context = {'form': EntryForm(instance=entry), 'entry_id': entry_id}
+        return render(request, 'entries/edit.html',context)
+    

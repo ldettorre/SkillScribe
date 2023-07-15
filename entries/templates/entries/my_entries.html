@@ -1,0 +1,16 @@
+{% extends 'base.html' %} {% block content %}
+    <h1>My Entries Page.</h1>
+    {% for entry in entries %}
+    <p>{{ entry.owner }}</p>
+    <p>{{ entry.question }}</p>
+    <p>{{ entry.created_on }}</p>
+    <p>{{ entry.situation }}</p>
+    <p>{{ entry.task }}</p>
+    <p>{{ entry.action }}</p>
+    <p>{{ entry.result }}</p>
+    <a href="{% url 'edit_entry' entry.id %}">Edit Entry</a>
+    <hr>
+    {% endfor %}
+
+
+{% endblock %}
