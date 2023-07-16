@@ -1,8 +1,20 @@
 {% extends 'base.html' %} {% block content %}
     <h1>My Entries Page.</h1>
+    <form action="{% url 'get_entries' %}" method="GET">
+    <label for="category">Choose a Category:</label>
+        <select name="category" id="category">
+            <option value="All" selected>All</option>
+            {% for category in user_categories %}
+            <option value="{{category}}">{{category}}</option>
+            {% endfor %}
+        </select>
+        <input type="submit" value="Submit">
+    </form>
+
     {% for entry in entries %}
     <p>{{ entry.owner }}</p>
     <p>{{ entry.question }}</p>
+    <p>{{ entry.question.category }}</p>
     <p>{{ entry.created_on }}</p>
     <p>{{ entry.situation }}</p>
     <p>{{ entry.task }}</p>
