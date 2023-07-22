@@ -1,4 +1,52 @@
-h1 {
-    color:blue;
-    font-size: 200px;
+/* Index page styling */
+body {
+    background-color: #f0f2f5;
 }
+.index-row{
+    margin-top:15vh;
+    text-align: center;
+}
+
+.login-div{
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 20px 20px 50px grey;
+    min-width: 20vw;
+}
+@media screen and (max-width: 767px) { 
+    .login-div{
+        background-color: transparent;
+        box-shadow: none;
+    }
+}
+
+.login-form input{
+    width:50%;
+    padding:8px;
+    border-radius: 6px;
+    border: 1px solid grey;
+    min-width: 100%;
+}
+
+input.login-submit-button{
+    background-color: #1877f2;
+    color:white;
+    font-weight: 600;
+    margin:8px 0px 2px 0px;
+}
+
+.register-button{
+    border: none;
+    border-radius: 6px;
+    background-color: #42b72a;
+    color:white;
+    font-weight: 600;
+    margin:5px 0px 10px 0px;
+    min-width: 100%;
+    padding: 8px;
+}
+.title-text {
+    font-size:45px;
+    padding: 2vh 0 2vh 0;
+}
+
