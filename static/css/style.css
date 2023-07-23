@@ -113,4 +113,16 @@ input.register-submit-button{
 .question-content {
     overflow-y: auto
 }
+
+/* @media screen and (max-width: 767px) { 
+    .category-column {
+        display: none;
+    }
+} */
+
+.category-dropdown {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
 /* Questions page styling end */

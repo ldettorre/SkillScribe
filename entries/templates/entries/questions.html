@@ -1,11 +1,26 @@
-{% extends 'base.html' %} {% block content %}
+{% extends 'base.html' %} {% load static %} {% block content %}
 <div class="row">
     <div class="col-12 text-center questions-title">
         <h1>Browse Questions.</h1>
     </div>
 </div>
+
+<!-- Category Dropdown Selection -->
 <div class="row">
-    <div class="col-lg-3 col-md-3 col-sm-2 category-column">
+    <div class="col-10 mx-auto category-dropdown" id="category-dropdown">
+        <select class="form-select" aria-label="">
+            <option selected>Select a category</option>
+            {% for category in categories %}
+            <option value="{{ category.name }}">{{ category.name }}</option>
+            {% endfor %}
+        </select>
+    </div>
+</div>
+<!-- End of Category Dropdown Selection -->
+
+<!-- Category Side Panel -->
+<div class="row">
+    <div class="col-lg-3 col-md-4 category-column" id="category-column">
         <div class="fixed-category-list text-center">
             <h4>Categories</h4>
             <div class="list-group">
@@ -16,20 +31,18 @@
                 {% endfor %}
             </div>
         </div>
-    
     </div>
+    <!-- End of Category Side Panel -->
 
-    <div class="col-lg-9 col-md-9 col-sm-10">
+    <div class="col-lg-9 col-md-8">
     {% for category in categories %}
         <div class="question-content">
             <div class="text-center">
                 <p class="category-name">{{ category.name }}</p>
             </div>
             {% for question in category.behaviouralquestion_set.all %}
-            <div class="">
-                <p>{{ question.title }}</p>
-                <a href="{% url 'add_entry' question.id %}">Add Entry</a>
-            </div>
+            <p>{{ question.title }}</p>
+            <a href="{% url 'add_entry' question.id %}">Add Entry</a>
             {% endfor %}
             <br>
         </div>
