@@ -29,6 +29,8 @@ SECRET_KEY = config('SECRET_KEY')
 DEBUG = config('DEBUG', cast=bool)
 
 
+
+
 ALLOWED_HOSTS = ['skillscribe-d47e2a842c2b.herokuapp.com','127.0.0.1']
 
 
@@ -137,6 +139,7 @@ if DEBUG == True:
     STATICFILES_DIRS = [
         os.path.join(BASE_DIR, 'static'),
     ]
+    STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 else:
     AWS_ACCESS_KEY_ID = config('AWS_ACCESS_KEY_ID')
     AWS_SECRET_ACCESS_KEY = config('AWS_SECRET_ACCESS_KEY')
@@ -145,10 +148,10 @@ else:
 
     DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
     STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
-    STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
+    STATICFILES_DIRS = [os.path.join(BASE_DIR, 'staticfiles')]
 
     AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
-    # STATIC_URL = "https://%s/%s/" % (AWS_S3_CUSTOM_DOMAIN, 'static')
+    STATIC_URL = "https://%s/%s/" % (AWS_S3_CUSTOM_DOMAIN, 'static')
 
 
 # Default primary key field type
