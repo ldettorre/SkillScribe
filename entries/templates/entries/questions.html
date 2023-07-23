@@ -1,12 +1,39 @@
 {% extends 'base.html' %} {% block content %}
-    <h1>Questions Page.</h1>
-    {% for category in categories %}
-        <b>{{ category.name }}</b>
-        {% for question in category.behaviouralquestion_set.all %}
-            <p>{{ question.title }}</p>
-            <a href="{% url 'add_entry' question.id %}">Add Entry</a>
-        {% endfor %}
-        <br>
-    {% endfor %}
+<div class="row">
+    <div class="col-12 text-center questions-title">
+        <h1>Browse Questions.</h1>
+    </div>
+</div>
+<div class="row">
+    <div class="col-lg-3 col-md-3 col-sm-2 category-column">
+        <div class="fixed-category-list text-center">
+            <h4>Categories</h4>
+            <div class="list-group">
+                {% for category in categories %}
+                <a href="#" class="list-group-item list-group-item-action">
+                    {{ category.name }}
+                </a>
+                {% endfor %}
+            </div>
+        </div>
+    
+    </div>
 
+    <div class="col-lg-9 col-md-9 col-sm-10">
+    {% for category in categories %}
+        <div class="question-content">
+            <div class="text-center">
+                <p class="category-name">{{ category.name }}</p>
+            </div>
+            {% for question in category.behaviouralquestion_set.all %}
+            <div class="">
+                <p>{{ question.title }}</p>
+                <a href="{% url 'add_entry' question.id %}">Add Entry</a>
+            </div>
+            {% endfor %}
+            <br>
+        </div>
+    {% endfor %}
+    </div>
+</div>
 {% endblock %}

@@ -5,6 +5,7 @@ body {
 .index-row{
     margin-top:15vh;
     text-align: center;
+    justify-content: center
 }
 
 .login-div{
@@ -45,8 +46,71 @@ input.login-submit-button{
     min-width: 100%;
     padding: 8px;
 }
+
+.register-button:hover  {
+    border: 2px solid #42b72a;
+    color: #42b72a;
+}
 .title-text {
     font-size:45px;
     padding: 2vh 0 2vh 0;
 }
 
+/* Index page styling end */
+
+
+/* Register page styling */
+.login-button{
+    border: none;
+    border-radius: 6px;
+    background-color: #1877f2;
+    color:white;
+    font-weight: 600;
+    margin:5px 0px 10px 0px;
+    min-width: 100%;
+    padding: 8px;
+}
+
+.login-button:hover  {
+    border: 2px solid #1877f2;
+    color: #1877f2;
+}
+
+input.register-submit-button{
+    background-color: #42b72a;
+    color:white;
+    font-weight: 600;
+    margin:8px 0px 2px 0px;
+}
+
+.register-form input{
+    width:50%;
+    padding:8px;
+    border-radius: 6px;
+    border: 1px solid grey;
+    min-width: 100%;
+}
+
+/* Register page styling end */
+
+
+/* Questions page styling */
+.questions-title {
+    margin:2vh 0 2vh 0;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.category-name {
+    font-weight: 500;
+}
+
+.fixed-category-list {
+    position: fixed;
+    border-radius: 8px;
+    padding: 5px;
+}
+
+.question-content {
+    overflow-y: auto
+}
+/* Questions page styling end */
