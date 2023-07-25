@@ -9,12 +9,18 @@ $(document).ready(function() {
             document.getElementById('category-dropdown').hidden = true
             
         }
-    }
+    }  
 
     showCategorySelectElement();
 
     $(window).resize(function() {
         console.log("Changing width detected...")
         showCategorySelectElement();
+    });
+
+    $('#dropdown-selection').change(function() {
+        var selection = $(this).val(); 
+        var selectedCategory = document.getElementById(selection);
+        selectedCategory.scrollIntoView();         
     });
 });

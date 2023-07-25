@@ -2,6 +2,7 @@
 body {
     background-color: #f0f2f5;
 }
+
 .index-row{
     margin-top:15vh;
     text-align: center;
@@ -110,19 +111,28 @@ input.register-submit-button{
     padding: 5px;
 }
 
-.question-content {
-    overflow-y: auto
+.question-content {  
+    /* margin: 2vh 0 2vh 0; */
+    padding: 2vh 0 2vh 0;
 }
 
-/* @media screen and (max-width: 767px) { 
-    .category-column {
-        display: none;
-    }
-} */
 
 .category-dropdown {
     margin-top: 5px;
     margin-bottom: 5px;
+    position: fixed;
 }
 
 /* Questions page styling end */
+
+/* Add Entry page styling */
+
+.add-entry-button{
+    width:auto;
+    padding:5px;
+    background-color: #42b72a;
+    color: white;
+    border-radius: 10px;
+    text-decoration: none;
+}
+/* Add Entry page styling end */
