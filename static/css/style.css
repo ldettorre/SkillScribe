@@ -123,6 +123,10 @@ input.register-submit-button{
     position: fixed;
 }
 
+.question-div {
+    margin: 1vh 0 1vh 0;
+}
+
 /* Questions page styling end */
 
 /* Add Entry page styling */

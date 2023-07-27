@@ -40,14 +40,13 @@ def add_entry(request, question_id):
 @login_required(login_url="/login/")
 def get_entries(request):
     # Filter the entries retrieved that only match the logged in user.
+    # Filter the entries retrieved that only match the logged in user.
     entries = Entry.objects.filter(owner = request.user)
     user_categories = Entry.get_user_categories(request)
-    if request.method == 'GET':
-        category = request.GET.get('category')
-        if category == 'All':
-            entries = Entry.objects.filter(owner = request.user)
-        else:
-            entries = entries.filter(question__category__name=category)
+    selected_category = request.GET.get('category')
+    print(selected_category)
+    if selected_category in user_categories:
+        entries = entries.filter(question__category__name=selected_category)
     
     context = {
         'entries' : entries,

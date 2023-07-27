@@ -10,11 +10,10 @@ $(document).ready(function() {
             
         }
     }  
-
+    
     showCategorySelectElement();
 
     $(window).resize(function() {
-        console.log("Changing width detected...")
         showCategorySelectElement();
     });
 
@@ -23,4 +22,7 @@ $(document).ready(function() {
         var selectedCategory = document.getElementById(selection);
         selectedCategory.scrollIntoView();         
     });
+
+    
+
 });
