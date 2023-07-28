@@ -24,10 +24,10 @@ class Entry(models.Model):
     owner = models.ForeignKey(User, on_delete=models.CASCADE)
     question = models.ForeignKey(BehaviouralQuestion, on_delete=models.DO_NOTHING)
     created_on = datetime.datetime.now()
-    situation = models.CharField(max_length=300)
-    task = models.TextField()
-    action = models.CharField(max_length=300)
-    result = models.CharField(max_length=300)
+    situation = models.CharField(max_length=400)
+    task = models.CharField(max_length=400)
+    action = models.CharField(max_length=1024)
+    result = models.CharField(max_length=1024)
 
     def __str__(self):
         return self.question.title

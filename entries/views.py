@@ -41,7 +41,7 @@ def add_entry(request, question_id):
 def get_entries(request):
     # Filter the entries retrieved that only match the logged in user.
     # Filter the entries retrieved that only match the logged in user.
-    entries = Entry.objects.filter(owner = request.user)
+    entries = Entry.objects.filter(owner = request.user).order_by('question')
     user_categories = Entry.get_user_categories(request)
     selected_category = request.GET.get('category')
     print(selected_category)
@@ -76,3 +76,9 @@ def edit_entry(request, entry_id):
         context = {'form': EntryForm(instance=entry), 'entry_id': entry_id}
         return render(request, 'entries/edit.html',context)
     
+
+@login_required(login_url="/login/")
+def delete_entry(request, entry_id):
+    entry = get_object_or_404(Entry, id=entry_id)
+    entry.delete()
+    return redirect('get_entries')

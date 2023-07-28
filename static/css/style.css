@@ -140,3 +140,11 @@ input.register-submit-button{
     text-decoration: none;
 }
 /* Add Entry page styling end */
+
+/* My Entries page styling */
+
+.modal-delete-btn { 
+    text-decoration:none;
+    color: white;
+}
+/* My Entryes page styling end */
