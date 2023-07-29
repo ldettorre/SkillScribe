@@ -139,6 +139,11 @@ input.register-submit-button{
     border-radius: 10px;
     text-decoration: none;
 }
+
+.char-limit-div {
+    float:right;
+}
+
 /* Add Entry page styling end */
 
 /* My Entries page styling */

@@ -22,7 +22,7 @@ def login(request):
 def logout(request): 
     auth_logout(request)
     print('User logged out')
-    return redirect('questions')
+    return redirect('login')
 
 
 def register(request):

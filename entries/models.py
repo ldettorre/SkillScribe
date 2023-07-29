@@ -20,14 +20,15 @@ class BehaviouralQuestion(models.Model):
     def get_category(self):
         return self.category
 
+
 class Entry(models.Model):
     owner = models.ForeignKey(User, on_delete=models.CASCADE)
-    question = models.ForeignKey(BehaviouralQuestion, on_delete=models.DO_NOTHING)
+    question = models.ForeignKey(BehaviouralQuestion, on_delete=models.CASCADE)
     created_on = datetime.datetime.now()
-    situation = models.CharField(max_length=400)
-    task = models.CharField(max_length=400)
-    action = models.CharField(max_length=1024)
-    result = models.CharField(max_length=1024)
+    situation = models.TextField(blank=False)
+    task = models.TextField(blank=False)
+    action = models.TextField(blank=False)
+    result = models.TextField(blank=False)
 
     def __str__(self):
         return self.question.title
@@ -38,4 +39,3 @@ class Entry(models.Model):
         for i in user_entries:
             user_categories.add(i.question.category.name)
         return user_categories
-        

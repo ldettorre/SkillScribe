@@ -10,12 +10,6 @@ $(document).ready(function() {
             
         }
     }  
-    
-    showCategorySelectElement();
-
-    $(window).resize(function() {
-        showCategorySelectElement();
-    });
 
     $('#dropdown-selection').change(function() {
         var selection = $(this).val(); 
@@ -23,6 +17,18 @@ $(document).ready(function() {
         selectedCategory.scrollIntoView();         
     });
 
-    
+    $("#id_situation").on("input", function(){
+        var situationInput = document.getElementById('id_situation');
+        var situationLimit = document.getElementById('situation-limit');
+        var inputLength = situationInput.value.length;
+        situationLimit.innerHTML = inputLength;  
+    });
 
+    showCategorySelectElement();
+
+    $(window).resize(function() {
+        showCategorySelectElement();
+    });
+
+    
 });
