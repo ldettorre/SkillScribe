@@ -39,10 +39,10 @@
         <div class="row question-content">
             <p class="category-name" id="{{ category.name }}">{{ category.name }}</p>
             {% for question in category.behaviouralquestion_set.all %}
-            <div class="col-9 question-div"> 
+            <div class="col-sm-9 question-div"> 
             <p>{{ question.title }}</p>
             </div>
-            <div class="col-3 question-div">
+            <div class="col-sm-3 question-div">
                 <a href="{% url 'add_entry' question.id %}" class="add-entry-button">Add Entry</a>
             </div>
             {% endfor %}
