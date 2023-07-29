@@ -1,4 +1,5 @@
 $(document).ready(function() {
+    
     function showCategorySelectElement() {
         if ($(window).width() <= 768) {
             document.getElementById('category-column').hidden = true
@@ -7,7 +8,6 @@ $(document).ready(function() {
         else{
             document.getElementById('category-column').hidden = false
             document.getElementById('category-dropdown').hidden = true
-            
         }
     }  
 
@@ -17,12 +17,6 @@ $(document).ready(function() {
         selectedCategory.scrollIntoView();         
     });
 
-    $("#id_situation").on("input", function(){
-        var situationInput = document.getElementById('id_situation');
-        var situationLimit = document.getElementById('situation-limit');
-        var inputLength = situationInput.value.length;
-        situationLimit.innerHTML = inputLength;  
-    });
 
     showCategorySelectElement();
 
