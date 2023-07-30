@@ -147,6 +147,18 @@ input.register-submit-button{
 /* Add Entry page styling end */
 
 /* My Entries page styling */
+.my-entry-dropdown {
+    margin:1vh 0 1vh 0;
+}
+
+.my-entry-dropdown select {
+    height:38px;
+    border-radius:8px;
+}
+
+.my-entry-dropdown input {
+    margin-bottom:3px;
+}
 
 .modal-delete-btn { 
     text-decoration:none;

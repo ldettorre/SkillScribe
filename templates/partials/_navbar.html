@@ -12,6 +12,9 @@
                 </li>
             {% if request.user.is_authenticated %}
                 <li class="nav-item">
+                    <a class="nav-link" aria-current="page" href="{% url 'profile' %}">Profile</a>
+                </li>
+                <li class="nav-item">
                     <a class="nav-link" aria-current="page" href="{% url 'get_entries' %}">My Entries</a>
                 </li>
                 <li class="nav-item">

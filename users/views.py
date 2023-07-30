@@ -5,7 +5,10 @@ from entries.views import questions
 # login and logout are given aliases as they conflict with the view names
 
 def login(request):
-    if request.method == 'POST':
+    if request.user.is_authenticated:
+        return redirect('questions')
+
+    elif request.method == 'POST':
         username = request.POST['username']
         password = request.POST['password']
         user = authenticate(username=username, password=password)
@@ -26,7 +29,10 @@ def logout(request):
 
 
 def register(request):
-    if request.method == 'POST':
+    if request.user.is_authenticated:
+        return redirect('questions')
+
+    elif request.method == 'POST':
         print('Registration Attempt')
         first_name = request.POST['first_name']
         last_name = request.POST['last_name']
@@ -38,6 +44,8 @@ def register(request):
         
         if password1 == password2:
             print('Passwords match')
+            if len(password1) < 8:
+                return redirect('register')
             # Check if the username is already taken
             if User.objects.filter(username=username).exists():
                 print("Username already taken.")

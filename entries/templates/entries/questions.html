@@ -9,7 +9,7 @@
 <div class="row">
     <div class="col-10 mx-auto category-dropdown" id="category-dropdown">
         <select class="form-select" id="dropdown-selection" aria-label="">
-            <option selected>Select a category</option>
+            <option selected value="reset">Select a category</option>
             {% for category in categories %}
             <option value="{{category.name}}">{{ category.name }}</option>
             {% endfor %}
@@ -36,7 +36,7 @@
 
     <div class="col-lg-9 col-md-8">
     {% for category in categories %}
-        <div class="row question-content">
+        <div class="row question-content" id="content-top">
             <p class="category-name" id="{{ category.name }}">{{ category.name }}</p>
             {% for question in category.behaviouralquestion_set.all %}
             <div class="col-sm-9 question-div"> 

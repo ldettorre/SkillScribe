@@ -44,7 +44,6 @@ def get_entries(request):
     entries = Entry.objects.filter(owner = request.user).order_by('question')
     user_categories = Entry.get_user_categories(request)
     selected_category = request.GET.get('category')
-    print(selected_category)
     if selected_category in user_categories:
         entries = entries.filter(question__category__name=selected_category)
     
