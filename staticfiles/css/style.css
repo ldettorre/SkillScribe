@@ -152,4 +152,8 @@ input.register-submit-button{
     text-decoration:none;
     color: white;
 }
+
+.accordion-body p{
+    word-break: break-all;
+}
 /* My Entryes page styling end */

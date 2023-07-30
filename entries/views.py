@@ -73,7 +73,7 @@ def edit_entry(request, entry_id):
             entry.save()
             return redirect('get_entries')
     else:
-        context = {'form': EntryForm(instance=entry), 'entry_id': entry_id}
+        context = {'form': EntryForm(instance=entry), 'entry': entry}
         return render(request, 'entries/edit.html',context)
     
 

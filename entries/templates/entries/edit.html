@@ -1,13 +1,29 @@
 {% extends 'base.html' %} {% load crispy_forms_filters %} {% load crispy_forms_tags %} {% block content %}
-    <h1>Edit Entry Page.</h1>
-    <form action="{% url 'edit_entry' entry_id %}" method="POST">
+<div class="row">
+    <div class="mx-auto col-sm-6">
+        <h1 class="text-center">Edit Entry:</h1>
+        <p><b>Category: </b>{{ entry.question.category.name }}</p>
+        <p><b>Question: </b>{{ entry.question.title }}</p>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-sm-8 mx-auto">
+        <form action="{% url 'edit_entry' entry.id %}"  id="add-entry-form" method="POST">
         {% csrf_token %}
-        {{ form|crispy }}
+            <div class="char-limit-div"><p>Character Limit: <span id="situation-limit">0</span>/400</p></div>
+            {{ form.situation|as_crispy_field }}
+            <div class="char-limit-div"><p>Character Limit: <span id="task-limit">0</span>/400</p></div>
+            {{ form.task|as_crispy_field }}
+            <div class="char-limit-div"><p>Character Limit: <span id="action-limit">0</span>/1000</p></div>
+            {{ form.action|as_crispy_field }}
+            <div class="char-limit-div"><p>Character Limit: <span id="result-limit">0</span>/1000</p></div>
+            {{ form.result|as_crispy_field }}
         <input type="submit" class="btn btn-success" value="Save Changes">
         <a href="{% url 'get_entries' %}" class="btn btn-danger">Cancel Changes</a>
-    </form>
-    
-    <hr>
+        </form>
+    </div>
+</div>
     
 
 
