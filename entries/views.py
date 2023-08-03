@@ -79,5 +79,8 @@ def edit_entry(request, entry_id):
 @login_required(login_url="/login/")
 def delete_entry(request, entry_id):
     entry = get_object_or_404(Entry, id=entry_id)
-    entry.delete()
-    return redirect('get_entries')
+    if request.user != entry.owner:
+        return redirect('get_entries')
+    else:
+        entry.delete()
+        return redirect('get_entries')

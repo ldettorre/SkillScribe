@@ -5,7 +5,7 @@ class EntryForm(forms.ModelForm):
    class Meta:
      model = Entry
      fields = ('situation', 'task', 'action', 'result')
-
+     
      widgets = {
       'situation' : forms.Textarea(attrs={'rows': 5,'placeholder': 'Give context on the situation. Explain what was happening or what was the core issue arising.','maxlength': '400'}),
       'task' : forms.Textarea(attrs={'rows': 5,'placeholder': 'Elaborate on what was the problem at hand. What needed to be resolved and what was the disired end-goal or outcome?','maxlength': '400'}),

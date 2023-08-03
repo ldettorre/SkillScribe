@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.models import User
+from .forms import CustomUserCreationForm
 from django.contrib.auth import authenticate, login as auth_login, logout as auth_logout
-from entries.views import questions
 # login and logout are given aliases as they conflict with the view names
 
 def login(request):
@@ -32,45 +32,24 @@ def register(request):
     if request.user.is_authenticated:
         return redirect('questions')
 
-    elif request.method == 'POST':
-        print('Registration Attempt')
-        first_name = request.POST['first_name']
-        last_name = request.POST['last_name']
-        username = request.POST['username']
-        email = request.POST['email']
-        password1 = request.POST['password1']
-        password2 = request.POST['password2']
-
-        
-        if password1 == password2:
-            print('Passwords match')
-            if len(password1) < 8:
-                return redirect('register')
-            # Check if the username is already taken
-            if User.objects.filter(username=username).exists():
-                print("Username already taken.")
-                return redirect('register')
-            # Check if the email is already taken
-            elif User.objects.filter(email=email).exists():
-                print("Email already registered.")
-                return redirect('register')
-            else:
-                user = User.objects.create_user(first_name=first_name, 
-                last_name=last_name, 
-                username=username, email=email,
-                password=password1)
-                user.save()
-                print("User registered.")
-                auth_login(request,user)
-                print("User now logged in after new registration")
-                return redirect('profile')
-                
-        else:
-            print('Passwords dont match')
-            return redirect('/')
-    else:
-        return render(request, 'users/register.html')
-
+    if request.method == 'POST':  
+        form = CustomUserCreationForm(request.POST) 
+        print("posted")
+        if form.is_valid():
+            print("Form is valid") 
+            user = form.save() 
+            auth_login(request,user)
+            return redirect('questions')
+    else: 
+        form = CustomUserCreationForm()
+    context = {  
+        'form':form  
+    }
+    return render(request, 'users/register.html', context)
+            
 
 def profile(request):
-    return render(request, 'users/profile.html')
+    if request.user.is_authenticated:
+        return render(request, 'users/profile.html')
+    else:
+        return redirect('login')
