@@ -43,7 +43,8 @@
             <p>{{ question.title }}</p>
             </div>
             <div class="col-sm-3 question-div">
-                <a href="{% url 'add_entry' question.id %}" class="add-entry-button">Add Entry</a>
+                <!-- <a href="{% url 'add_entry' question.id %}" class="add-entry-button">Add Entry</a> -->
+                <a href="{% url 'add_entry' question.id %}" class=" btn btn-primary px-4 add-entry-button">Add Entry</a>
             </div>
             {% endfor %}
             <br>

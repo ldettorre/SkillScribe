@@ -84,6 +84,10 @@ input.register-submit-button{
     margin:8px 0px 2px 0px;
 }
 
+.register-form{
+    padding-top:3vh;
+}
+
 .register-form input{
     width:50%;
     padding:8px;
@@ -92,6 +96,14 @@ input.register-submit-button{
     min-width: 100%;
 }
 
+.register-form label {
+    visibility: hidden;
+    display:none;
+}
+
+.form-text {
+    display: none;
+}
 /* Register page styling end */
 
 

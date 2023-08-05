@@ -2,7 +2,6 @@ from datetime import timezone
 from django.shortcuts import render, redirect, get_object_or_404
 from .models import Category, BehaviouralQuestion, Entry
 from django.contrib.auth.decorators import login_required
-from django.contrib.auth.models import User
 from .forms import EntryForm
 
 # Create your views here.

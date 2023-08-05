@@ -1,5 +1,9 @@
 {% extends 'base.html' %} {% block content %}
-    <h1>My Entries Page.</h1>
+<div class="row">
+    <div class="col-12 text-center questions-title">
+        <h1>My Entries</h1>
+    </div>
+</div>
     <div class="row category-dropdown-row">
         <div class="col-12 my-entry-dropdown">
             {% if user_categories %}
