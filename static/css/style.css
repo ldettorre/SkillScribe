@@ -114,6 +114,12 @@ input.register-submit-button{
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
+/* @media screen and (max-width: 767px) { 
+    .questions-title{
+        display:none;
+    }
+} */
+
 .category-name {
     font-weight: 500;
 }
@@ -127,13 +133,13 @@ input.register-submit-button{
 .question-content {  
     /* margin: 2vh 0 2vh 0; */
     padding: 2vh 0 2vh 0;
+    margin-top:3vh;
 }
-
 
 .category-dropdown {
     margin-top: 5px;
     margin-bottom: 5px;
-    position: fixed;
+    position:fixed;
 }
 
 .question-div {
