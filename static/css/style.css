@@ -75,6 +75,7 @@ input.login-submit-button{
 .login-button:hover  {
     border: 2px solid #1877f2;
     color: #1877f2;
+    background-color: white;
 }
 
 input.register-submit-button{
@@ -201,5 +202,16 @@ input.register-submit-button{
     display:none;
 }
 
+.profile-save-btn {
+    float:right;
+    padding-right:5px;
+}
 
 /* Profile Page styling end */
+
+/* Password Reset styling */
+.password-reset-form label{
+    visibility: hidden;
+    display:none;
+}
+/* Password Reset styling end */

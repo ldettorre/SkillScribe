@@ -75,6 +75,7 @@ input.login-submit-button{
 .login-button:hover  {
     border: 2px solid #1877f2;
     color: #1877f2;
+    background-color: white;
 }
 
 input.register-submit-button{
@@ -144,12 +145,18 @@ input.register-submit-button{
 /* Add Entry page styling */
 
 .add-entry-button{
-    width:auto;
-    padding:5px;
+    /* width:auto;
+    padding:5px; */
     background-color: #42b72a;
     color: white;
-    border-radius: 10px;
+    border-color: white;
+    /* border-radius: 10px; */
     text-decoration: none;
+}
+
+.add-entry-button:hover {
+    background-color: white;
+    color: #42b72a;
 }
 
 .char-limit-div {
@@ -180,4 +187,31 @@ input.register-submit-button{
 .accordion-body p{
     word-break: break-all;
 }
-/* My Entryes page styling end */
+/* My Entries page styling end */
+
+
+
+/* Profile Page styling */
+.profile-img{
+    width:120px;
+    height:130px;
+}
+
+.edit-profile-form label {
+    visibility: hidden;
+    display:none;
+}
+
+.profile-save-btn {
+    float:right;
+    padding-right:5px;
+}
+
+/* Profile Page styling end */
+
+/* Password Reset styling */
+.password-reset-form label{
+    visibility: hidden;
+    display:none;
+}
+/* Password Reset styling end */
