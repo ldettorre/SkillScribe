@@ -7,7 +7,7 @@ from .forms import EntryForm
 # Create your views here.
 
 def questions(request):
-    categories  = Category.objects.all()
+    categories  = Category.objects.all().order_by("name")
     questions = BehaviouralQuestion.objects.all()
     context ={
         'categories' : categories,
