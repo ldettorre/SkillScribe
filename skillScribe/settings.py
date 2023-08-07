@@ -27,7 +27,7 @@ SECRET_KEY = config('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config('DEBUG', cast=bool)
-
+DEBUG = False
 
 
 ALLOWED_HOSTS = ['skillscribe-d47e2a842c2b.herokuapp.com','127.0.0.1']

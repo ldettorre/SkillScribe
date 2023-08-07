@@ -114,12 +114,6 @@ input.register-submit-button{
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
-/* @media screen and (max-width: 767px) { 
-    .questions-title{
-        display:none;
-    }
-} */
-
 .category-name {
     font-weight: 500;
 }
@@ -221,3 +215,11 @@ input.register-submit-button{
     display:none;
 }
 /* Password Reset styling end */
+
+/* About Page styling */
+.about-content {
+    justify-content: center;
+    font-weight:500;
+}
+
+/* About Page styling end */
