@@ -69,3 +69,11 @@ def edit_profile(request):
         'form':form  
     }
     return render(request, 'users/profile.html',context)
+
+def delete_profile(request):
+    if request.user.is_authenticated:
+        user = request.user
+        user.delete()
+        return redirect('/')
+    else:
+        return redirect('/')

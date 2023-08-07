@@ -10,6 +10,7 @@ class BehaviouralQuestionAdmin(admin.ModelAdmin):
 
 class EntryAdmin(admin.ModelAdmin):
     list_display = ('id','owner', 'created_on')
+    search_fields = ('id', 'owner__username',)
 
 
 admin.site.register(Category, CategoryAdmin)

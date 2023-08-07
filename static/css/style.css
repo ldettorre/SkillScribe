@@ -203,8 +203,11 @@ input.register-submit-button{
 }
 
 .profile-save-btn {
+    float:left;
+}
+
+.profile-delete-btn {
     float:right;
-    padding-right:5px;
 }
 
 /* Profile Page styling end */
